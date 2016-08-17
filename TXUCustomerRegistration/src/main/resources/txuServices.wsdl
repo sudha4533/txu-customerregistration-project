@@ -1,0 +1,64 @@
+<wsdl:definitions xmlns:ns1="http://schemas.xmlsoap.org/soap/http"
+	xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://soap.service.registration.txu.com/"
+	xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	name="UtilityPlanServiceImpl" targetNamespace="http://soap.service.registration.txu.com/">
+	<wsdl:types>
+		<xs:schema xmlns:tns="http://soap.service.registration.txu.com/"
+			xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified"
+			targetNamespace="http://soap.service.registration.txu.com/" version="1.0">
+			<xs:element name="getServicePlans" type="tns:getServicePlans" />
+			<xs:element name="getServicePlansResponse" type="tns:getServicePlansResponse" />
+			<xs:complexType name="getServicePlans">
+				<xs:sequence />
+			</xs:complexType>
+			<xs:complexType name="getServicePlansResponse">
+				<xs:sequence>
+					<xs:element maxOccurs="unbounded" minOccurs="0" name="return"
+						type="tns:servicePlan" />
+				</xs:sequence>
+			</xs:complexType>
+			<xs:complexType name="servicePlan">
+				<xs:sequence>
+					<xs:element minOccurs="0" name="description" type="xs:string" />
+					<xs:element minOccurs="0" name="end_date" type="xs:dateTime" />
+					<xs:element minOccurs="0" name="plan_name" type="xs:string" />
+					<xs:element name="service_id" type="xs:int" />
+					<xs:element minOccurs="0" name="start_date" type="xs:dateTime" />
+				</xs:sequence>
+			</xs:complexType>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="getServicePlans">
+		<wsdl:part element="tns:getServicePlans" name="parameters"></wsdl:part>
+	</wsdl:message>
+	<wsdl:message name="getServicePlansResponse">
+		<wsdl:part element="tns:getServicePlansResponse" name="parameters"></wsdl:part>
+	</wsdl:message>
+	<wsdl:portType name="UtilityPlanService">
+		<wsdl:operation name="getServicePlans">
+			<wsdl:input message="tns:getServicePlans" name="getServicePlans"></wsdl:input>
+			<wsdl:output message="tns:getServicePlansResponse" name="getServicePlansResponse"></wsdl:output>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="UtilityPlanServiceImplSoapBinding"
+		type="tns:UtilityPlanService">
+		<soap:binding style="document"
+			transport="http://schemas.xmlsoap.org/soap/http" />
+		<wsdl:operation name="getServicePlans">
+			<soap:operation soapAction="" style="document" />
+			<wsdl:input name="getServicePlans">
+				<soap:body use="literal" />
+			</wsdl:input>
+			<wsdl:output name="getServicePlansResponse">
+				<soap:body use="literal" />
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="UtilityPlanServiceImpl">
+		<wsdl:port binding="tns:UtilityPlanServiceImplSoapBinding"
+			name="UtilityPlanServiceImplPort">
+			<soap:address
+				location="http://localhost:8080/TXUCustomerRegistrationServices/soapservices/serviceplans" />
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>
