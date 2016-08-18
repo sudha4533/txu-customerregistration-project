@@ -29,10 +29,8 @@ public class CustomerRegisterDAO {
 				cust_id = (int) session.save(customer);
 				if (cust_id > 0) {
 					logger.info("Customer registered successfully, Customer Details : " + customer);
-					session.close();
 					return true;
 				} else {
-					session.close();
 					logger.info("Could not register the customer");
 					return false;
 				}
