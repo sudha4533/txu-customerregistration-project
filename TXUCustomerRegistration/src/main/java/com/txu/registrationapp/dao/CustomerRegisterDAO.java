@@ -2,7 +2,8 @@ package com.txu.registrationapp.dao;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
 import com.txu.registrationapp.model.Customer;
@@ -12,7 +13,7 @@ public class CustomerRegisterDAO {
 
 	private int cust_id;
 
-	private static final Logger logger = Logger.getLogger(CustomerRegisterDAO.class);
+	private static final Logger logger = LoggerFactory.getLogger(CustomerRegisterDAO.class);
 
 	private SessionFactory sessionFactory;
 
