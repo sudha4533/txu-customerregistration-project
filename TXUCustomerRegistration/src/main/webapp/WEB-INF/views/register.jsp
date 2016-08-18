@@ -14,16 +14,16 @@
 <body>
 
 
-	<div class="container" style="width:500px">
+	<div class="container" style="width: 500px">
 
 		<br>
 		<h1 style="color: maroon;">TXU Energy</h1>
 		<h3>
 			<%
-			out.println(request.getAttribute("message").toString());
-		%>
+				out.println(request.getAttribute("message").toString());
+			%>
 		</h3>
-		<h3 style="color: white;">All fields are mandatory</h3>
+		<h4 style="color: maroon;">All fields are mandatory</h4>
 		<form role="form" method="POST" action="customer/add">
 			<div class="form-group">
 				<label for="firstname">First name</label> <input type="text"

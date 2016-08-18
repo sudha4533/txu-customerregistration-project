@@ -30,7 +30,7 @@ public class ServicePlanProvider {
 
 			serviceplans = new SoapClient().getServices();
 
-			if (serviceplans != null) {
+			if (serviceplans != null && serviceplans.size() >= 0) {
 				
 				ServicePlan plan = serviceplans.get(0);
 				int service_id = plan.getServiceId();

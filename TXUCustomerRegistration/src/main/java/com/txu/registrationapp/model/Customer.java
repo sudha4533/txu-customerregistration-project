@@ -96,7 +96,7 @@ public class Customer {
 
 	@Override
 	public String toString(){
-		return "id = " + id + " , name = " + firstname + " " + lastname;
+		return "Name = " + firstname + " " + lastname;
 	}
 
 	/**
@@ -112,6 +112,5 @@ public class Customer {
 	public void setServicePlan(ServicePlan servicePlan) {
 		this.servicePlan = servicePlan;
 	}
-	
 	
 }

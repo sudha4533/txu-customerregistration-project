@@ -8,10 +8,14 @@ body {
 	margin-left: 200px;
 	margin-top: 100px;
 	font-style: italic;
-	font-weight: bold;
 }
 
-h3, p {
+h3 {
+	color: maroon;
+	text-decoration: underline
+}
+
+p {
 	color: maroon;
 }
 </style>
@@ -27,10 +31,10 @@ h3, p {
 
 	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
-	<p>Name: &nbsp; ${customer.firstname}  ${customer.lastname}</p>
+	<p>Name: &nbsp; ${customer.firstname} ${customer.lastname}</p>
 	<p>Phone: &nbsp; ${customer.phone}</p>
 	<p>Email: &nbsp; ${customer.email}</p>
-	<p>Service Plan details</p>
+	<h3>Service Plan details</h3>
 	<p>Name: &nbsp;${customer.servicePlan.plan_name}</p>
 	<p>Description: &nbsp;${customer.servicePlan.description}</p>
 	<p>Start date: &nbsp;${customer.servicePlan.start_date}</p>

@@ -93,9 +93,4 @@ public class ServicePlan {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-
-	@Override
-	public String toString(){
-		return service_id+"::"+plan_name+"::"+description;
-	}
 }
