@@ -8,6 +8,13 @@ import com.txu.registrationapp.dao.CustomerRegisterDAO;
 import com.txu.registrationapp.model.Customer;
 import com.txu.webserviceclients.rest.RestClient;
 
+/**
+ * @author Sudha Gunamgari
+ */
+
+/**
+ * Saves customer details, adds service plan to the customer and sends back the registration details along with utility plan attached.
+ */
 @Service
 public class CustomerRegisterService {
 
@@ -16,10 +23,17 @@ public class CustomerRegisterService {
 
 	private CustomerRegisterDAO customerDAO;
 
+	/**
+	 * @param customerDAO
+	 */
 	public void setCustomerDAO(CustomerRegisterDAO customerDAO) {
 		this.customerDAO = customerDAO;
 	}
 
+	/**
+	 * @param customer
+	 * @returns true when customer is registered
+	 */
 	@Transactional
 	public boolean addCustomer(Customer customer) {
 
@@ -32,6 +46,10 @@ public class CustomerRegisterService {
 
 	}
 
+	/**
+	 * Rest call is made to Service provider application
+	 * @returns customer details 
+	 */
 	public Customer getCustomerDetails() {
 
 		Customer customer = new Customer();

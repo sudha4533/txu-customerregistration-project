@@ -8,6 +8,9 @@ import org.springframework.stereotype.Repository;
 
 import com.txu.registrationapp.model.Customer;
 
+/**
+ * Saves customer details to database
+ */
 @Repository
 public class CustomerRegisterDAO {
 
@@ -17,10 +20,17 @@ public class CustomerRegisterDAO {
 
 	private SessionFactory sessionFactory;
 
+	/**
+	 * @param sessionFactory
+	 */
 	public void setSessionFactory(SessionFactory sessionFactory) {
 		this.sessionFactory = sessionFactory;
 	}
 
+	/**
+	 * @param customer
+	 * @returns true when customer details is saved to database
+	 */
 	public boolean addCustomer(Customer customer) {
 
 		if (sessionFactory != null) {

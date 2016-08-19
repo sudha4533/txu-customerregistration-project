@@ -16,12 +16,22 @@ public class CustomerRegisterController {
 	@Autowired
 	private CustomerRegisterService customerService;
 
+	/**
+	 * @param model
+	 * @returns register view page
+	 */
 	@RequestMapping(value = "/form", method = RequestMethod.GET)
 	public String displayForm(ModelMap model) {
 	model.put("message", "Register here");
 		return "register";
 	}
 
+	/**
+	 * 
+	 * @param customer
+	 * @param model
+	 * @returns home view page
+	 */
 	@RequestMapping(value = "/customer/add", method = RequestMethod.POST)
 	public String addCustomer(@ModelAttribute("customer") Customer customer, ModelMap model) {
 

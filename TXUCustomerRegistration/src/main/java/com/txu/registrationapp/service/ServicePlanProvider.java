@@ -14,6 +14,9 @@ import com.txu.webserviceclients.soap.client.SoapClient;
  * @author Sudha Gunamgari
  */
 
+/**
+ * Assigns the service plan to the customer
+ */
 public class ServicePlanProvider {
 
 	@Autowired
@@ -22,6 +25,12 @@ public class ServicePlanProvider {
 	@Autowired
 	CustomerRegisterDAO customerDAO;
 	
+	/**
+	 * Soap call to get the service plans from the Service provider Application
+	 * then sending the cust_id, Service_id to the JMS receiver service.
+	 * @param customer
+	 * @returns true when service plan is assigned to the customer
+	 */
 	public boolean addServicePlan(Customer customer) {
 
 		List<ServicePlan> serviceplans = null;
